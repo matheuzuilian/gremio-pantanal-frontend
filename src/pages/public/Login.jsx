@@ -20,12 +20,19 @@ function Login() {
     try {
       const response = await axios.post(`${API_URL}/auth/login`, { cpf, senha });
       
-      // Salva os dados do usuário no navegador (Sessão)
-      localStorage.setItem('usuario', JSON.stringify(response.data.user));
+      const usuarioLogado = response.data.user; // Pega os dados do usuário
+
+      // Salva na memória do navegador
+      localStorage.setItem('usuario', JSON.stringify(usuarioLogado));
       
-      // Redireciona baseado no perfil (Futuramente podemos ter admin separado)
-      // Por enquanto, todos vão para o Dashboard
-      navigate('/dashboard');
+      // 🛑 AQUI ESTÁ A CORREÇÃO DO "GPS":
+      if (usuarioLogado.perfil === 'admin') {
+        console.log("Usuário é Admin -> Indo para Painel");
+        navigate('/admin/dashboard'); // Leva para o Painel da Secretaria
+      } else {
+        console.log("Usuário é Militar -> Indo para Área do Sócio");
+        navigate('/dashboard'); // Leva para o Dashboard Comum
+      }
       
     } catch (error) {
       if (error.response) {
