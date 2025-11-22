@@ -9,10 +9,12 @@ import PublicLayout from './layouts/PublicLayout';
 import Home from './pages/public/Home';
 import Noticias from './pages/public/Noticias';
 import Sobre from './pages/public/Sobre';
-import Login from './pages/public/Login'; // Note o novo caminho!
+import Login from './pages/public/Login';
+import AdminLayout from './layouts/AdminLayout';
+import AdminNoticias from './pages/admin/AdminNoticias';
 
 // Páginas do Usuário
-import Dashboard from './pages/user/Dashboard'; // Note o novo caminho!
+import Dashboard from './pages/user/Dashboard';
 
 function App() {
   return (
@@ -30,6 +32,13 @@ function App() {
 
         {/* ROTAS PROTEGIDAS (Logadas) */}
         <Route path="/dashboard" element={<Dashboard />} />
+
+        {/* ROTAS ADMINISTRATIVAS (Protegidas) */}
+        <Route path="/admin" element={<AdminLayout />}>
+        <Route path="dashboard" element={<h2>Bem-vindo, Administrador!</h2>} />
+        <Route path="noticias" element={<AdminNoticias />} />
+        {/* Futuramente: Membros, Rancho, etc */}
+        </Route>
       </Routes>
     </Router>
   );
