@@ -1,0 +1,15 @@
+/* src/components/Navbar.css */
+.navbar { background: #003366; height: 80px; display: flex; justify-content: center; align-items: center; font-size: 1.2rem; position: sticky; top: 0; z-index: 999; }
+.navbar-container { display: flex; justify-content: space-between; align-items: center; width: 100%; max-width: 1200px; padding: 0 20px; }
+.navbar-logo { color: #fff; text-decoration: none; font-weight: bold; font-size: 1.5rem; }
+.nav-menu { display: flex; list-style: none; gap: 20px; align-items: center; }
+.nav-links { color: #fff; text-decoration: none; padding: 0.5rem 1rem; transition: all 0.2s ease-out; }
+.nav-links:hover { color: #ffd700; } /* Amarelo Ouro */
+.btn-header { padding: 8px 20px; border-radius: 4px; outline: none; border: none; background-color: #ffd700; color: #003366; font-weight: bold; cursor: pointer; transition: all 0.3s ease-out; }
+.btn-header:hover { background-color: #fff; }
+
+/* Responsivo para Celular */
+@media screen and (max-width: 768px) {
+  .nav-menu { display: none; } /* Em um projeto real, aqui entraria um menu hambúrguer */
+  .navbar-container { justify-content: center; }
+}
