@@ -12,6 +12,9 @@ import Sobre from './pages/public/Sobre';
 import Login from './pages/public/Login';
 import AdminLayout from './layouts/AdminLayout';
 import AdminNoticias from './pages/admin/AdminNoticias';
+import AdminMembros from './pages/admin/AdminMembros';
+import AdminDiretoria from './pages/admin/AdminDiretoria';
+import AdminProjetos from './pages/admin/AdminProjetos';
 
 // Páginas do Usuário
 import Dashboard from './pages/user/Dashboard';
@@ -37,7 +40,11 @@ function App() {
         <Route path="/admin" element={<AdminLayout />}>
         <Route path="dashboard" element={<h2>Bem-vindo, Administrador!</h2>} />
         <Route path="noticias" element={<AdminNoticias />} />
+        {/* Dentro de <Route path="/admin" ...> */}
+        <Route path="membros" element={<AdminMembros />} />
         {/* Futuramente: Membros, Rancho, etc */}
+        <Route path="diretoria" element={<AdminDiretoria />} />
+        <Route path="projetos" element={<AdminProjetos />} />
         </Route>
       </Routes>
     </Router>

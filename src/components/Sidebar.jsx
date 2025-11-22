@@ -21,6 +21,8 @@ function Sidebar() {
         <li><Link to="/admin/membros">👥 Gerenciar Membros</Link></li>
         <li><Link to="/admin/noticias">📰 Publicar Notícias</Link></li>
         <li><Link to="/admin/rancho">🍽️ Rancho do Dia</Link></li>
+        <li><Link to="/admin/diretoria">🎖️ Diretoria</Link></li>
+        <li><Link to="/admin/projetos">🏗️ Projetos</Link></li>
       </ul>
       <div className="sidebar-footer">
         <button onClick={handleLogout} className="btn-logout">Sair</button>
